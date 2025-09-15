@@ -135,8 +135,22 @@ export default function Home() {
 
         <div className="flex items-center gap-4">
           <a
-            href="#contact"
             className="rounded-md font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center bg-gradient-to-b from-primary to-primary/80 text-primary-foreground shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset] px-4 py-2 text-sm"
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById("contact");
+              if (element) {
+                const headerOffset = 120; // Account for sticky header height + margin
+                const elementPosition =
+                  element.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset;
+
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth",
+                });
+              }
+            }}
           >
             Contact Us
           </a>
@@ -238,7 +252,9 @@ export default function Home() {
       {/* Services  */}
       <Features />
       {/* About  */}
-      <About />
+      <div id="about">
+        <About />
+      </div>
       {/* Contact  */}
       <Contact />
       {/* Footer  */}

@@ -107,7 +107,7 @@ export default function Features() {
           Our Services
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full max-w-7xl px-4 sm:px-6">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
@@ -118,16 +118,16 @@ export default function Features() {
                   isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary/50"
+                className="group relative bg-card border border-border rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary/50"
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3 sm:gap-4">
                   <div
-                    className={`p-3 rounded-lg bg-gradient-to-br ${service.color} shadow-sm`}
+                    className={`p-2 sm:p-3 rounded-lg bg-gradient-to-br ${service.color} shadow-sm flex-shrink-0`}
                   >
-                    <IconComponent className="w-6 h-6 text-white" />
+                    <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors leading-tight">
                       {service.title}
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">

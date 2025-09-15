@@ -19,7 +19,7 @@ export function Contact() {
         >
           <div className="border-primary/40 text-primary inline-flex items-center gap-2 rounded-full border px-3 py-1 uppercase">
             <span>✶</span>
-            <span className="text-sm">Contact & FAQ</span>
+            <span className="text-sm">Contact</span>
           </div>
         </motion.div>
 
@@ -49,20 +49,20 @@ export function Contact() {
               <div className="text-2xl mb-2">📞</div>
               <div className="font-medium text-foreground">Call Us</div>
               <div className="text-muted-foreground text-sm">
-                (+971) 02-123-4567
+                (+971) 02-554-3445
               </div>
             </div>
             <div className="text-center">
               <div className="text-2xl mb-2">✉️</div>
               <div className="font-medium text-foreground">Email Us</div>
               <div className="text-muted-foreground text-sm">
-                info@goldenshield.com
+                info@Goldenshield-uae.com
               </div>
             </div>
             <div className="text-center">
               <div className="text-2xl mb-2">📍</div>
               <div className="font-medium text-foreground">Visit Us</div>
-              <div className="text-muted-foreground text-sm">123 Abu Dhabi</div>
+              <div className="text-muted-foreground text-sm">Abu Dhabi</div>
             </div>
           </div>
         </motion.div>

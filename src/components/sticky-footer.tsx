@@ -50,42 +50,82 @@ export function StickyFooter() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <ul className="space-y-2">
-                <li
-                  className="hover:underline cursor-pointer transition-colors"
-                  style={{ color: "#121113" }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = "rgba(18, 17, 19, 0.8)")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = "#121113")
-                  }
+                <a
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById("services");
+                    if (element) {
+                      const headerOffset = 120; // Account for sticky header height + margin
+                      const elementPosition =
+                        element.getBoundingClientRect().top +
+                        window.pageYOffset;
+                      const offsetPosition = elementPosition - headerOffset;
+
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth",
+                      });
+                    }
+                  }}
                 >
-                  Services
-                </li>
-                <li
-                  className="hover:underline cursor-pointer transition-colors"
-                  style={{ color: "#121113" }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = "rgba(18, 17, 19, 0.8)")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = "#121113")
-                  }
+                  <li
+                    className="hover:underline cursor-pointer transition-colors"
+                    style={{ color: "#121113" }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.color = "rgba(18, 17, 19, 0.8)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.color = "#121113")
+                    }
+                  >
+                    Services
+                  </li>
+                </a>
+                <a
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById("about");
+                    if (element) {
+                      const headerOffset = 120; // Account for sticky header height + margin
+                      const elementPosition =
+                        element.getBoundingClientRect().top +
+                        window.pageYOffset;
+                      const offsetPosition = elementPosition - headerOffset;
+
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth",
+                      });
+                    }
+                  }}
                 >
-                  About
-                </li>
-                <li
-                  className="hover:underline cursor-pointer transition-colors"
-                  style={{ color: "#121113" }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = "rgba(18, 17, 19, 0.8)")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = "#121113")
-                  }
-                >
-                  Projects
-                </li>
+                  <li
+                    className="hover:underline cursor-pointer transition-colors"
+                    style={{ color: "#121113" }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.color = "rgba(18, 17, 19, 0.8)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.color = "#121113")
+                    }
+                  >
+                    About Us
+                  </li>
+                </a>
+                <a href="/projects">
+                  <li
+                    className="hover:underline cursor-pointer transition-colors"
+                    style={{ color: "#121113" }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.color = "rgba(18, 17, 19, 0.8)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.color = "#121113")
+                    }
+                  >
+                    Projects
+                  </li>
+                </a>
               </ul>
             </motion.div>
             <motion.h2
