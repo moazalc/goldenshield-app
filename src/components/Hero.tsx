@@ -16,7 +16,22 @@ export default function Hero() {
 
   return (
     <>
-      <section className="relative overflow-hidden min-h-screen flex flex-col">
+      <section className="flex flex-col overflow-hidden min-h-screen relative -mt-20">
+        <div className="absolute inset-0 z-0 hidden md:block">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/herovideo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/50"></div>
+        </div>
+
         <div className="container mx-auto px-4 py-24 sm:py-32 relative z-10 flex-1 flex flex-col">
           <div className="mx-auto max-w-4xl text-center flex-1 flex flex-col justify-center">
             {/* Main Heading */}
@@ -28,7 +43,7 @@ export default function Hero() {
             >
               <h1
                 id="main-title"
-                className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl"
+                className="text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl"
               >
                 Build <strong>stronger</strong> <span>&</span> <br />
                 <strong>safer</strong>{" "}
@@ -41,7 +56,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mx-auto mb-12 max-w-2xl text-lg text-muted-foreground"
+              className="mx-auto mb-12 max-w-2xl text-lg text-gray-200"
             >
               Professional construction and renovation services with over 15
               years of experience. From residential remodeling to commercial

@@ -2,6 +2,9 @@
 import { useEffect, useState } from "react";
 import Hero from "@/components/Hero";
 import Features from "@/components/features";
+import { About } from "@/components/about-us";
+import { Contact } from "@/components/contact-us";
+import { StickyFooter } from "@/components/sticky-footer";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -124,21 +127,7 @@ export default function Home() {
           </a>
           <a
             className="relative px-4 py-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-            onClick={(e) => {
-              e.preventDefault();
-              const element = document.getElementById("Projects");
-              if (element) {
-                const headerOffset = 120; // Account for sticky header height + margin
-                const elementPosition =
-                  element.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - headerOffset;
-
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                });
-              }
-            }}
+            href="/projects"
           >
             <span className="relative z-20">Projects</span>
           </a>
@@ -162,16 +151,25 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <svg
-            fill="currentColor"
-            viewBox="0 0 147 70"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            className="text-foreground rounded-full size-7 w-7"
-          >
-            <path d="M56 50.2031V14H70V60.1562C70 65.5928 65.5928 70 60.1562 70C57.5605 70 54.9982 68.9992 53.1562 67.1573L0 14H19.7969L56 50.2031Z"></path>
-            <path d="M147 56H133V23.9531L100.953 56H133V70H96.6875C85.8144 70 77 61.1856 77 50.3125V14H91V46.1562L123.156 14H91V0H127.312C138.186 0 147 8.81439 147 19.6875V56Z"></path>
-          </svg>
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-black"
+              >
+                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+              </svg>
+            </div>
+            <span className="font-bold text-foreground">GoldenShield</span>
+          </div>
         </a>
 
         <button
@@ -239,6 +237,12 @@ export default function Home() {
       <Hero />
       {/* Services  */}
       <Features />
+      {/* About  */}
+      <About />
+      {/* Contact  */}
+      <Contact />
+      {/* Footer  */}
+      <StickyFooter />
     </div>
   );
 }
