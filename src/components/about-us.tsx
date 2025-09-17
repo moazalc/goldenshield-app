@@ -39,29 +39,31 @@ const About = () => {
 
         {/* Bottom Row: Stats */}
         <div className="flex flex-col lg:flex-row items-center justify-center gap-16">
-          <div className="flex items-center gap-6 border-b-2 border-yellow-500 pb-4">
+          {/* 25 Years of Experience */}
+          <div className="flex flex-col items-center border-b-2 border-yellow-500 pb-4 gap-2">
             <NumberTicker
               value={25}
               className="text-6xl lg:text-8xl font-bold text-gray-900"
             />
-            <span className="text-xl lg:text-2xl font-medium text-gray-700 ">
+            <span className="text-xl lg:text-2xl font-medium text-gray-700 text-center">
               Years of Experience
             </span>
-            <br />
           </div>
-          <div className="flex items-center gap-6 border-b-2 border-yellow-500 pb-4">
+
+          {/* 100 Projects Built */}
+          <div className="flex flex-col items-center border-b-2 border-yellow-500 pb-4 gap-2">
             <NumberTicker
               value={100}
               className="text-6xl lg:text-8xl font-bold text-gray-900"
             />
-            <span className="text-xl lg:text-2xl font-medium text-gray-700">
+            <span className="text-xl lg:text-2xl font-medium text-gray-700 text-center">
               Projects Built
             </span>
           </div>
         </div>
       </div>
       {/* Servics  */}
-      <div className="mt-20 pt-12">
+      <div className="mt-20 pt-12" id="services">
         <Services />
       </div>
     </section>
