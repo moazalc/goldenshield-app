@@ -105,6 +105,7 @@ const test = () => {
       <div id="about">
         <About />
       </div>
+      <Testimony />
       <div id="projects">
         <Gallery4 {...demoData} />
       </div>
