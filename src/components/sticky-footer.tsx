@@ -76,12 +76,12 @@ export function Footer() {
         {/* "GoldenShield" Heading */}
         <h2 className="absolute bottom-0 left-0 -mb-5 sm:text-[100px] text-[80px] font-bold select-none">
           <span className="hidden sm:inline">GoldenShield</span>
-          <span className="inline sm:hidden">GS</span>
+          <span className="inline sm:hidden text-[65px]">GS</span>
         </h2>
 
         {/* Copyright */}
         <p className="absolute bottom-0 right-0 mb-4 mr-6 text-sm sm:text-base">
-          All Rights Reserved.
+          &copy; 2025 Rayn Group. All Rights Reserved.
         </p>
       </div>
     </footer>
