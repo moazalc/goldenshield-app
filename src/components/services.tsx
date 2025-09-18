@@ -1,42 +1,53 @@
+import Image from "next/image";
 import { TextAnimate } from "./ui/text-animate";
-import { Scale, Megaphone, Home, Wrench, Hammer, HardHat } from "lucide-react";
+import { Wrench, Zap, ClipboardCheck, Key, Home } from "lucide-react";
+import { FC } from "react";
 
-const services = [
+// Define a type for icon: either a string (PNG path) or a React component
+type IconType = string | FC<React.SVGProps<SVGSVGElement>>;
+
+interface Service {
+  title: string;
+  description: string;
+  icon: IconType;
+}
+
+const services: Service[] = [
   {
-    title: "Broker Opinion of Valuation",
+    title: "Construction Works",
     description:
-      "Professional property valuation services to determine accurate and reliable market value for your real estate investments.",
-    icon: Scale,
+      "Comprehensive construction services for residential, commercial, and industrial projects, ensuring high-quality execution from foundation to finishing.",
+    icon: "/icons/crane.png",
   },
   {
-    title: "Marketing for Sale",
+    title: "Maintenance & Renovation Works",
     description:
-      "Comprehensive marketing strategies designed to maximize exposure and achieve the best possible sale prices for your properties.",
-    icon: Megaphone,
+      "Professional maintenance, repair, and renovation services to extend property lifespan, improve aesthetics, and enhance functionality.",
+    icon: "/icons/tool.png",
   },
   {
-    title: "Managing Property while Vacant",
+    title: "Electrical Works",
     description:
-      "Complete vacant property management including security, maintenance, and preparation for sale or lease.",
-    icon: Home,
+      "Full electrical installation, repair, and maintenance solutions, including wiring, lighting, and safety systems tailored to modern standards.",
+    icon: "/icons/warning.png",
   },
   {
-    title: "General Maintenance Services",
+    title: "Construction Project Management & Execution",
     description:
-      "Ongoing property upkeep and maintenance services to preserve value, enhance safety, and ensure tenant satisfaction.",
-    icon: Wrench,
+      "End-to-end project management and implementation, from planning and coordination to on-site execution, ensuring projects are delivered on time and within budget.",
+    icon: "/icons/plan.png",
   },
   {
-    title: "General Contractor",
+    title: "Property Leasing",
     description:
-      "Full-service construction and renovation solutions tailored for both residential and commercial properties.",
-    icon: HardHat,
+      "Assistance in leasing residential and commercial properties, including marketing, tenant screening, and contract management to maximize occupancy.",
+    icon: "/icons/opportunity.png",
   },
   {
-    title: "Recommend Repairs",
+    title: "Real Estate Sales & Purchases",
     description:
-      "Expert inspections and recommendations for essential repairs to maintain property condition and long-term value.",
-    icon: Hammer,
+      "Expert guidance in buying and selling properties, offering market insights, valuation, and negotiation support to secure the best deals.",
+    icon: "/icons/estate.png",
   },
 ];
 
@@ -51,7 +62,7 @@ const Services = () => {
           by="character"
           once
         >
-          Services
+          Our Services
         </TextAnimate>
       </div>
 
@@ -60,13 +71,24 @@ const Services = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service, i) => {
             const Icon = service.icon;
+
             return (
               <div
                 key={i}
-                className="bg-white rounded-2xl shadow-md p-6 flex flex-col items-start hover:shadow-xl transition-transform hover:-translate-y-1"
+                className="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-xl transition-transform hover:-translate-y-1"
               >
                 {/* Icon */}
-                <Icon className="w-10 h-10 text-yellow-500 mb-4" />
+                {typeof Icon === "string" ? (
+                  <Image
+                    src={Icon}
+                    alt={service.title}
+                    width={50}
+                    height={50}
+                    className="mb-4"
+                  />
+                ) : (
+                  <Icon className="w-10 h-10 text-yellow-500 mb-4" />
+                )}
 
                 {/* Title */}
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">
