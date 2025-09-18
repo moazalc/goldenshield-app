@@ -39,10 +39,10 @@ const About = () => {
 
         {/* Bottom Row: Stats */}
         <div className="flex flex-col lg:flex-row items-center justify-center gap-16">
-          {/* 25 Years of Experience */}
+          {/*  Years of Experience */}
           <div className="flex flex-col items-center border-b-2 border-yellow-500 pb-4 gap-2">
             <NumberTicker
-              value={25}
+              value={15}
               className="text-6xl lg:text-8xl font-bold text-gray-900"
             />
             <span className="text-xl lg:text-2xl font-medium text-gray-700 text-center">
@@ -50,10 +50,10 @@ const About = () => {
             </span>
           </div>
 
-          {/* 100 Projects Built */}
+          {/* Projects Built */}
           <div className="flex flex-col items-center border-b-2 border-yellow-500 pb-4 gap-2">
             <NumberTicker
-              value={100}
+              value={250}
               className="text-6xl lg:text-8xl font-bold text-gray-900"
             />
             <span className="text-xl lg:text-2xl font-medium text-gray-700 text-center">
@@ -63,7 +63,7 @@ const About = () => {
         </div>
       </div>
       {/* Servics  */}
-      <div className="mt-20 pt-12" id="services">
+      <div className="mt-5 pt-12" id="services">
         <Services />
       </div>
     </section>

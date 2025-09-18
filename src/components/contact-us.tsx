@@ -61,7 +61,7 @@ export default function Contact() {
           />
         </svg>
       ),
-      contact: "Mussafah, Abu Dhabi, United Arab Emirates.",
+      contact: "Mussafah M7, Abu Dhabi, United Arab Emirates.",
     },
   ];
 
@@ -88,6 +88,17 @@ export default function Contact() {
                   </li>
                 ))}
               </ul>
+            </div>
+            <div className="w-full   h-[300px] md:h-[400px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227.13199766555684!2d54.512707533437435!3d24.37740822705904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e4167cc39a61b%3A0x38b68ded69892cb9!2sView%20Car%20Care!5e0!3m2!1sen!2sae!4v1758188311681!5m2!1sen!2sae"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
           <div className="flex-1 mt-12 sm:max-w-lg lg:max-w-md">
@@ -120,7 +131,7 @@ export default function Contact() {
                 <label className="font-medium text-white">Message</label>
                 <textarea
                   required
-                  className="w-full mt-2 h-36 px-3 py-2 resize-none appearance-none bg-white text-black outline-none border focus:border-yellow-500 shadow-sm rounded-lg"
+                  className="w-full mt-2 h-66 px-3 py-2 resize-none appearance-none bg-white text-black outline-none border focus:border-yellow-500 shadow-sm rounded-lg"
                 ></textarea>
               </div>
               <button className="w-full px-4 py-2 text-white font-medium bg-yellow-500 hover:bg-gray-500 active:bg-gray-600 rounded-lg duration-150">
