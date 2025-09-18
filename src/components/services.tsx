@@ -1,47 +1,59 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import Image from "next/image";
 import { TextAnimate } from "./ui/text-animate";
+import { Wrench, Zap, ClipboardCheck, Key, Home } from "lucide-react";
+import { FC } from "react";
 
-const services = [
+// Define a type for icon: either a string (PNG path) or a React component
+type IconType = string | FC<React.SVGProps<SVGSVGElement>>;
+
+interface Service {
+  title: string;
+  description: string;
+  icon: IconType;
+}
+
+const services: Service[] = [
   {
-    title: "Broker Opinion of Valuation",
+    title: "Construction Works",
     description:
-      "Professional property valuation services to determine accurate market value for your real estate investments.",
+      "Comprehensive construction services for residential, commercial, and industrial projects, ensuring high-quality execution from foundation to finishing.",
+    icon: "/icons/crane.png",
   },
   {
-    title: "Marketing for Sale",
+    title: "Maintenance & Renovation Works",
     description:
-      "Comprehensive marketing strategies to maximize exposure and achieve optimal sale prices for your properties.",
+      "Professional maintenance, repair, and renovation services to extend property lifespan, improve aesthetics, and enhance functionality.",
+    icon: "/icons/tool.png",
   },
   {
-    title: "Managing Property while Vacant",
+    title: "Electrical Works",
     description:
-      "Complete vacant property management including security, maintenance, and preparation for sale or lease.",
+      "Full electrical installation, repair, and maintenance solutions, including wiring, lighting, and safety systems tailored to modern standards.",
+    icon: "/icons/warning.png",
   },
   {
-    title: "General Maintenance Services",
+    title: "Construction Project Management & Execution",
     description:
-      "Regular upkeep and maintenance services to preserve property value and ensure tenant satisfaction.",
+      "End-to-end project management and implementation, from planning and coordination to on-site execution, ensuring projects are delivered on time and within budget.",
+    icon: "/icons/plan.png",
   },
   {
-    title: "General Contractor",
+    title: "Property Leasing",
     description:
-      "Full-service construction and renovation solutions for residential and commercial properties.",
+      "Assistance in leasing residential and commercial properties, including marketing, tenant screening, and contract management to maximize occupancy.",
+    icon: "/icons/opportunity.png",
   },
   {
-    title: "Recommend Repairs",
+    title: "Real Estate Sales & Purchases",
     description:
-      "Expert assessment and recommendations for necessary repairs to maintain and improve property condition.",
+      "Expert guidance in buying and selling properties, offering market insights, valuation, and negotiation support to secure the best deals.",
+    icon: "/icons/estate.png",
   },
 ];
 
 const Services = () => {
   return (
-    <div className="mt-5 pt-5 ">
+    <div className="mt-16 pt-10">
       {/* Heading */}
       <div className="mb-12 text-center">
         <TextAnimate
@@ -50,39 +62,47 @@ const Services = () => {
           by="character"
           once
         >
-          Services
+          Our Services
         </TextAnimate>
       </div>
 
-      {/* Accordion Layout */}
-      <div className="container mx-auto px-6 flex flex-col lg:flex-row gap-10 max-w-6xl">
-        {/* Left column */}
-        <Accordion type="single" collapsible className="flex-1 space-y-6">
-          {services.slice(0, 3).map((service, i) => (
-            <AccordionItem key={i} value={`left-${i}`}>
-              <AccordionTrigger className="text-lg lg:text-xl font-semibold flex items-center gap-3">
-                {service.title}
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 text-base lg:text-lg leading-relaxed mt-2">
-                {service.description}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+      {/* Grid Layout */}
+      <div className="container mx-auto px-6 max-w-6xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {services.map((service, i) => {
+            const Icon = service.icon;
 
-        {/* Right column */}
-        <Accordion type="single" collapsible className="flex-1 space-y-6">
-          {services.slice(3, 6).map((service, i) => (
-            <AccordionItem key={i} value={`right-${i}`}>
-              <AccordionTrigger className="text-lg lg:text-xl font-semibold flex items-center gap-3">
-                {service.title}
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 text-base lg:text-lg leading-relaxed mt-2">
-                {service.description}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+            return (
+              <div
+                key={i}
+                className="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-xl transition-transform hover:-translate-y-1"
+              >
+                {/* Icon */}
+                {typeof Icon === "string" ? (
+                  <Image
+                    src={Icon}
+                    alt={service.title}
+                    width={50}
+                    height={50}
+                    className="mb-4"
+                  />
+                ) : (
+                  <Icon className="w-10 h-10 text-yellow-500 mb-4" />
+                )}
+
+                {/* Title */}
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-600 text-base leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

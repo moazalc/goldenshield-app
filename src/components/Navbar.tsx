@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/">
-          <Image src="/logo.png" alt="logo" width={120} height={120} />
+          <Image src="/Logo.svg" alt="logo" width={120} height={120} />
         </Link>
 
         {/* Desktop Links */}
@@ -98,7 +98,7 @@ const Navbar = () => {
                         behavior: "smooth",
                       });
                     }
-                  }, 100); 
+                  }, 100);
                 }}
                 className="hover:text-yellow-500 text-lg font-medium py-2 text-left"
               >
