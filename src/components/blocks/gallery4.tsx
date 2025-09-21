@@ -105,7 +105,7 @@ const Gallery4 = ({
       <div className="container mx-auto">
         <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
           <div className="flex flex-col gap-4 items-center text-center md:items-start md:text-left">
-            <h2 className="text-3xl text-yellow-500 font-medium md:text-4xl lg:text-5xl">
+            <h2 className="text-3xl text-yellow-500 font-bold md:text-4xl lg:text-5xl">
               {title}
             </h2>
             <p className="max-w-lg text-muted-foreground">{description}</p>

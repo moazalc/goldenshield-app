@@ -10,7 +10,26 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Golden Shield",
-  description: "A Contracting & Real Estate Management Company",
+  description:
+    "Professional contracting and real estate services in Abu Dhabi. Build stronger and safer with confidence. Residential and commercial projects.",
+  keywords: "contracting, real estate, leasing, Abu Dhabi, Dubai, renovation",
+  authors: [{ name: "Rayn Group" }],
+  openGraph: {
+    title: "GoldenShield - Trusted Properties & Quality Contracting",
+    description:
+      "Professional contracting and real estate services. Residential and commercial projects delivered with excellence.",
+    url: "https://goldenshield.com",
+    siteName: "GoldenShield",
+    images: [
+      {
+        url: "/logo2.svg",
+        width: 800,
+        height: 600,
+        alt: "GoldenShield Logo",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
